@@ -37,6 +37,27 @@ public class NumberTester {
 
         int amountTestCases = 0;
         String[] temp;
+        int operation;
+        int value;
+
+        // Funktionale Interfaces implementieren
+        setOddEvenTester((n) -> (n % 2 == 0));
+        setPrimeTester((n) -> {
+            if (n < 2) {
+                return false;
+            } else {
+                for (int i = 2; i < n; i++) {
+                    if (n % i == 0) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        });
+
+        setPalindromTester((n) -> {
+            return false;
+        });
 
         try (final BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             // Erste Zeile einlesen
@@ -51,22 +72,17 @@ public class NumberTester {
 
                 // Befehl und Zahl trennen
                 temp = line.split(" ");
-                amountTestCases--;
-                
-                // temp
-                this.setOddEvenTester((n) -> (n % 2 == 0));
-                boolean here = isEven.testNumber(4);
+                operation = Integer.parseInt(temp[0]);
+                value = Integer.parseInt(temp[1]);
 
                 // Entsprechenden Befehl ausfuehren
-                switch (Integer.valueOf(temp[0])) {
+                switch (operation) {
                     case 1:
-                        /* isEven
-                        if (this.isEven.testNumber(Integer.valueOf(temp[1]))) {
-
+                        if (isEven.testNumber(value)) {
+                            System.out.println("EVEN");
+                        } else {
+                            System.out.println("ODD");
                         }
-                        */
-                        this.setOddEvenTester((n) -> (n % 2 == 0));
-                        //boolean here = isEven.testNumber(4);
                         break;
 
                     case 2:
