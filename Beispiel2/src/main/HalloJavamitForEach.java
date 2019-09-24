@@ -5,6 +5,9 @@
  */
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author dfischer17
@@ -14,8 +17,14 @@ public class HalloJavamitForEach {
     /**
      * @param args the command line arguments
      */
+    private static List<String> myList = new ArrayList<>();
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        myList.add("Apfel");
+        myList.add("Birne");
+        myList.add("Banane");
+        
+        myList.forEach((str) -> System.out.println(str));
     }
     
 }
