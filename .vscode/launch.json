@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NumberTester",
+            "request": "launch",
+            "mainClass": "main.NumberTester"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HalloJavamitForEach",
+            "request": "launch",
+            "mainClass": "main.HalloJavamitForEach"
+        }
+    ]
+}

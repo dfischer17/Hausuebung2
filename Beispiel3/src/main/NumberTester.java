@@ -56,7 +56,8 @@ public class NumberTester {
         });
 
         setPalindromTester((n) -> {
-            return false;
+            String intStr = String.valueOf(n); 
+            return intStr.equals(new StringBuilder(intStr).reverse().toString());
         });
 
         try (final BufferedReader br = new BufferedReader(new FileReader(fileName))) {
@@ -78,6 +79,7 @@ public class NumberTester {
                 // Entsprechenden Befehl ausfuehren
                 switch (operation) {
                     case 1:
+                        // isEven
                         if (isEven.testNumber(value)) {
                             System.out.println("EVEN");
                         } else {
@@ -87,19 +89,30 @@ public class NumberTester {
 
                     case 2:
                         // isPrime
+                        if (isPrime.testNumber(value)) {
+                            System.out.println("PRIME");
+                        } else {
+                            System.out.println("NO PRIME");
+                        }
                         break;
 
                     case 3:
                         // isPalindrom
+                        if (isPalindrom.testNumber(value)) {
+                            System.out.println("PALINDROM");
+                        } else {
+                            System.out.println("NO PALINDROM");
+                        }
                         break;
 
                     default:
-                        System.err.println("Ungültige Befehlnummer");
+                        System.err.println("Ungueltige Befehlnummer!");
                 }
+                amountTestCases--;
             }
 
         } catch (FileNotFoundException ex) {
-            System.err.println("File not found!");
+            System.err.println("Datei nicht gefunden!");
         } catch (IOException ex) {
             System.out.println("IO Exception!");
         }
