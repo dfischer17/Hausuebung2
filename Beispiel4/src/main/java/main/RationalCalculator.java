@@ -10,23 +10,12 @@ package main;
  * @author Daniel Fischer
  */
 public class RationalCalculator extends AbstractCalculator {
-
-    public RationalCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
-        super(add, subtract, multiply, divide);
-    }
-                
-    public static void main(String[] args) {
-        // multiply, divide
-        
-        RationalCalculator rCalculator = new RationalCalculator(addLambda, subtractLambda, multiplyLambda, divideLambda);
-        Number number1 = new Number(21, 18);
-        Number number2 = new Number(3, 5);
-        
-        System.out.println(rCalculator.divide(number1, number2).toString());
-        
-    }
-    // multiplizieren und dividieren funktioniert!
     
+    // multiplizieren und dividieren funktioniert!
+    public RationalCalculator() {
+        super(addLambda, subtractLambda, multiplyLambda, divideLambda);
+    }
+                            
     static CalculationOperation addLambda = (n, k) -> {
         return null;
     };

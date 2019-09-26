@@ -14,11 +14,13 @@ import java.util.Scanner;
 public class Menu {
     private static Scanner input = new Scanner(System.in);
     
-    public static void chooseCalcMenu() {
-        System.out.println("1- Relational calculator");
-        System.out.println("Vector calculator");
-        System.out.println("Complex calculator");
-        System.out.println("Exit program");
+    public static int chooseCalcMenu() {
+        System.out.println("1 - Relational calculator");
+        System.out.println("2 - Vector calculator");
+        System.out.println("3 - Complex calculator");
+        System.out.println("4 - Exit program");
+        
+        return input.nextInt();
     }
     
     public static double[] fetchNumbers() {
@@ -39,12 +41,14 @@ public class Menu {
         return numberValues;
     }
     
-    public static void chooseOperationMenu() {
+    public static int chooseOperationMenu() {        
         System.out.println("1 - add");
         System.out.println("2 - subtract");
         System.out.println("3 - multiply");
         System.out.println("4 - divide");
         System.out.println("5 - enter numbers again");
+        
+        return input.nextInt();
     }
 }
 

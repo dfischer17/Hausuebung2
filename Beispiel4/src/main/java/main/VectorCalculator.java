@@ -11,13 +11,8 @@ package main;
  */
 public class VectorCalculator extends AbstractCalculator {
 
-    public VectorCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
-        super(add, subtract, multiply, divide);
-    }
-                
-    public static void main(String[] args) {
-        VectorCalculator v = new VectorCalculator(addLambda, subtractLambda, multiplyLambda, divideLambda);
-        System.out.println(v.divide(new Number(5, 1), new Number(5, 6)).toString());
+    public VectorCalculator() {
+        super(addLambda, subtractLambda, multiplyLambda, divideLambda);
     }
     
     static CalculationOperation addLambda = (n, k) -> {
