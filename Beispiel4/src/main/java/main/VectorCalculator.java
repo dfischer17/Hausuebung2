@@ -30,9 +30,10 @@ public class VectorCalculator extends AbstractCalculator {
     };
     
     static CalculationOperation multiplyLambda = (n, k) -> {
-        // Nur in 3D moeglich!
-        System.err.println("Nur in 3D moeglich!");
-        return null;
+        // Nur in 3D moeglich! Hier alternative mit Anahme dass die dritte Dimension Null betraegt
+        double scalar = n.getA() * k.getB() - n.getB() * k.getA();
+        
+        return new Number(scalar, 1);
     };
     
     static CalculationOperation divideLambda = (n, k) -> {

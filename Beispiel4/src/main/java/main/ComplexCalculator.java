@@ -10,21 +10,34 @@ package main;
  * @author Daniel Fischer
  */
 public class ComplexCalculator extends AbstractCalculator {
-    
-    static CalculationOperation addLambda = (n, k) -> {                
-        return null;
+
+    public static void main(String[] args) {
+        AbstractCalculator a = new ComplexCalculator();
+        a.add(new Number(3, 4), new Number(2, 5));
+    }
+
+    static CalculationOperation addLambda = (n, k) -> {
+        double real = n.getA() + k.getA();
+        double imaginary = n.getB() + k.getB();
+        return new Number(real, imaginary);
     };
-    
+
     static CalculationOperation subtractLambda = (n, k) -> {
-        return null;
+        double real = n.getA() - k.getA();
+        double imaginary = n.getB() - k.getB();
+        return new Number(real, imaginary);
     };
-    
+
     static CalculationOperation multiplyLambda = (n, k) -> {
-        return null;
+        double real = (n.getA() * k.getA()) - (n.getB() * k.getB());
+        double imaginary = (n.getA() * k.getB()) + (n.getB() * k.getA());
+        return new Number(real, imaginary);
     };
-    
+
     static CalculationOperation divideLambda = (n, k) -> {
-       return null;
+        double real = (((n.getA() * k.getA() + (n.getB() * k.getB())) / (Math.pow(k.getA(), 2) + Math.pow(k.getB(), 2))));
+        double imaginary = (((n.getA() * k.getB()) - (n.getB() * k.getA())) / (Math.pow(k.getA(), 2) + Math.pow(k.getB(), 2)));
+        return new Number(real, imaginary);
     };
 
     public ComplexCalculator() {
@@ -33,22 +46,21 @@ public class ComplexCalculator extends AbstractCalculator {
 
     @Override
     public Number add(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return addLambda.calc(a, b);
     }
 
     @Override
     public Number subtract(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return subtractLambda.calc(a, b);
     }
 
     @Override
     public Number multiply(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return multiplyLambda.calc(a, b);
     }
 
     @Override
     public Number divide(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return divideLambda.calc(a, b);
     }
-    
 }

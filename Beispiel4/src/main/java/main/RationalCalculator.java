@@ -21,12 +21,7 @@ public class RationalCalculator extends AbstractCalculator {
     };
     
     static CalculationOperation subtractLambda = (n, k) -> {
-       double kleinsterTeiler = n.getB() * k.getB();
-       
-       double zaehlerN = (kleinsterTeiler / n.getB()) * n.getA();
-       double zaehlerK = (kleinsterTeiler / n.getB()) * n.getA();
-       
-       return new Number(zaehlerN - zaehlerK, kleinsterTeiler);
+       return null;
     };
     
     static CalculationOperation multiplyLambda = (n, k) -> {
