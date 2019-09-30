@@ -9,8 +9,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -29,11 +27,10 @@ public class NumberTester {
 
     public static void main(String[] args) {
         NumberTester n = new NumberTester("test.txt");
-        n.run();
-
+        n.testFile();
     }
 
-    public void run() {
+    public void testFile() {
 
         int amountTestCases = 0;
         String[] temp;
@@ -128,9 +125,5 @@ public class NumberTester {
 
     public void setPalindromTester(NumberTest palindromTester) {
         this.isPalindrom = palindromTester;
-    }
-
-    public void testFile() {
-
     }
 }

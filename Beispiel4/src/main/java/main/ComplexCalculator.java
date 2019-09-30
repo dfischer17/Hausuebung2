@@ -11,11 +11,6 @@ package main;
  */
 public class ComplexCalculator extends AbstractCalculator {
 
-    public static void main(String[] args) {
-        AbstractCalculator a = new ComplexCalculator();
-        a.add(new Number(3, 4), new Number(2, 5));
-    }
-
     static CalculationOperation addLambda = (n, k) -> {
         double real = n.getA() + k.getA();
         double imaginary = n.getB() + k.getB();

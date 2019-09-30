@@ -10,18 +10,17 @@ package main;
  * @author Daniel Fischer
  */
 public class RationalCalculator extends AbstractCalculator {
-    
-    // multiplizieren und dividieren funktioniert!
+
     public RationalCalculator() {
         super(addLambda, subtractLambda, multiplyLambda, divideLambda);
     }
                             
-    static CalculationOperation addLambda = (n, k) -> {
-        return null;
+    static CalculationOperation addLambda = (a, b) -> {
+        return new Number(a.getA() * b.getB() + b.getA() *a.getB(), a.getB() * b.getB());
     };
     
-    static CalculationOperation subtractLambda = (n, k) -> {
-       return null;
+    static CalculationOperation subtractLambda = (a, b) -> {
+       return new Number(a.getA() * b.getB() - b.getA() * a.getB(), a.getB() * b.getB());
     };
     
     static CalculationOperation multiplyLambda = (n, k) -> {
